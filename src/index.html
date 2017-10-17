@@ -3,20 +3,49 @@
 		<meta charset="UTF-8">
 			
 		<title>Primer Laboratorio</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 		<script type="text/javascript" src="script.js"></script>
 	</head>
 	<body>
 		<h1>Laboratorio No. 3</h1>
-		<form method ="post">
-			Clave:
-			<input type="text" name="key" id="key" autocomplete="off"></br>
-			Valor:
-			<input type="text" name="value" id="value" autocomplete="off" /></br>
-			<input type="submit" name="Add" value="Agregar Registro" onclick="addRegister()" \>
-			<input type="submit" name="MostrarJSON" value="Mostrar" onclick="showJSON()" \>
-			<input type="submit" name="asd" value="BorrarJSON" onclick="clearJSON()" \>
-			
-		</form>
+		<form class="form-horizontal">
+				<fieldset>
+				
+				<!-- Form Name -->
+				<legend>Ingreso de Datos</legend>
+				
+				<!-- Text input-->
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="key">Nueva Clave</label>  
+				  <div class="col-md-4">
+				  <input id="key" name="key" type="text" placeholder="Clave" class="form-control input-md" autocomplete=false required="">
+				  <span class="help-block">Escriba la clave</span>  
+				  </div>
+				</div>
+				
+				<!-- Text input-->
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="value">Nuevo Valor</label>  
+				  <div class="col-md-4">
+				  <input id="value" name="value" type="text" placeholder="Valor" class="form-control input-md" autocomplete=false>
+				  <span class="help-block">Escriba el nuevo valor</span>  
+				  </div>
+				</div>
+				
+				<!-- Button (Double) -->
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="btn1"></label>
+				  <div class="col-md-8">
+					<button id="btn1" name="btn1" class="btn btn-info" onclick="addRegister()">Añadir Registro</button>
+					<button id="btn2" name="btn2" class="btn btn-info" onclick="showJSON()">Mostrar JSON</button>
+					<button id="btn2" name="btn3" class="btn btn-info" onclick="clearJSON()">Eliminar JSON</button>
+					
+				  </div>
+				</div>
+				
+				</fieldset>
+				</form>	
 		<div id = "output">
 
 		</div>
