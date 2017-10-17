@@ -1,17 +1,25 @@
 <html>
 	<head>
+		<meta charset="UTF-8">
+			
 		<title>Primer Laboratorio</title>
 		<script type="text/javascript" src="script.js"></script>
 	</head>
 	<body>
 		<h1>Laboratorio No. 3</h1>
-		<form method ="get">
+		<form method ="post">
 			Clave:
-			<input type="text" name="Key" id="Key" autocomplete="off"></br>
+			<input type="text" name="key" id="key" autocomplete="off"></br>
 			Valor:
-			<input type="text" name="Value" id="Value" autocomplete="off" /></br>
+			<input type="text" name="value" id="value" autocomplete="off" /></br>
 			<input type="submit" name="Add" value="Agregar Registro" onclick="addRegister()" \>
+			<input type="submit" name="MostrarJSON" value="Mostrar" onclick="showJSON()" \>
+			<input type="submit" name="asd" value="BorrarJSON" onclick="clearJSON()" \>
+			
 		</form>
+		<div id = "output">
+
+		</div>
 	</body>
 
 </html>
