@@ -83,9 +83,9 @@ function JSONtoXML(json_object)
 				var keyvalue=pairs[j];
 				keyvalue=j!=0?keyvalue.substring(2):keyvalue.substring(1);
 				var chain=keyvalue.split(",");//se tiene los pares llave valor
-				var tag='&lt;'+chain[0].split(":")[1]+'>';//la cosas que abren y cierran
-				var closetag=tag.substring(0,tag.length-2)+'/>';
-				var tagvalue=''+((tag+chain[1].split(":")[1]+closetag));//las cosas que tienen adentro las tags
+				var tag="<"+(chain[0].split(":")[1])+">";//la cosas que abren y cierran
+				var closetag=tag.substring(0,tag.length-2)+"/>" ;
+				var tagvalue=((tag+chain[1].split(":")[1]+closetag));//las cosas que tienen adentro las tags
 				xmlBody+=tagvalue+'<br/>';
 			}
 			break;
