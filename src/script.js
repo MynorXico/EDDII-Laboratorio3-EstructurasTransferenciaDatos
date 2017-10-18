@@ -30,7 +30,7 @@ function addRegister(){
 	alert("El registro se agregó correctamente");
 }
 function showJSON(){
-	document.getElementById("output").innerHTML = "Hola";
+	document.getElementById("output").innerHTML = "";
 	if(localStorage.getItem("JSON") == null){
 		alert("Aún no existen registros");
 		return;
