@@ -63,7 +63,7 @@ function JSONtoXML(json_object)
 		localStorage.setItem("XML",strXML);
 	}
 	//crar el xml 
-	var header='<?xml version="1.0" encoding="UTF-8"?'+'\n';
+	var header='&lt;?xml version="1.0" encoding="UTF-8"?>'+'<br/>';
 	var counter=json_object.length;
 	var auxlenght=0;
 	var masterCloseTag='';
@@ -72,7 +72,7 @@ function JSONtoXML(json_object)
 		
 		if(json_object.charAt(i)=='[')//la primera llave
 		{
-			var JSONname='<'+json_object.substring(2,auxlenght-2)+'>';//lo que va donde iria <catalog>
+			var JSONname='&lt;'+json_object.substring(2,auxlenght-2)+'>'+'<br/>';//lo que va donde iria <catalog>
 		     masterCloseTag=JSONname;
 			var allValues=json_object.substring(auxlenght);//quito mas porqueria
 			allValues=allValues.substring(1,allValues.length-2);//quito mas porqueria
@@ -83,17 +83,18 @@ function JSONtoXML(json_object)
 				var keyvalue=pairs[j];
 				keyvalue=j!=0?keyvalue.substring(2):keyvalue.substring(1);
 				var chain=keyvalue.split(",");//se tiene los pares llave valor
-				var tag='<'+chain[0].split(":")[1]+'>';//la cosas que abren y cierran
+				var tag='&lt;'+chain[0].split(":")[1]+'>';//la cosas que abren y cierran
 				var closetag=tag.substring(0,tag.length-2)+'/>';
-				var tagvalue='    		'+(tag+chain[1].split(":")[1]+closetag).replace('"', "");//las cosas que tienen adentro las tags
-				xmlBody+=tagvalue+'\n';
+				var tagvalue=''+((tag+chain[1].split(":")[1]+closetag));//las cosas que tienen adentro las tags
+				xmlBody+=tagvalue+'<br/>';
 			}
 			break;
 		}
 		auxlenght++;
 	}
 	masterCloseTag=masterCloseTag.substring(0,masterCloseTag.length-2)+'/>';
-	xmlBody+=masterCloseTag;	
+	xmlBody+=masterCloseTag;
+	alert(xmlBody);	
 	return xmlBody;
 	
 }
